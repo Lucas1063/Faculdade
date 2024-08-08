@@ -50,9 +50,13 @@ section {
 }
 
 .background {
+    width: 100vw;
+    height: 100vh;
     background-position: center;
     background-image: url(1266930.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #sessão1 img {
