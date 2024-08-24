@@ -28,7 +28,7 @@ function divisao() {
 }
 
 function informaresultado(valor) {
-    var elresultado = document.getElementById("resultado");
+    var elresultado = document.getElementById("resultadoOutput");
     if (typeof valor === 'string') {
         elresultado.value = valor;
         elresultado.style.backgroundColor = "gray";
