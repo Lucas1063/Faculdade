@@ -17,5 +17,9 @@
             <!-- Botões de 0 a 10 serão gerados aqui dinamicamente -->
         </div>
     </div>
+    
+    <footer>
+        <p class="anonimato">Sua avaliação espontânea é anônima, nenhuma informação pessoal é solicitada ou armazenada.</p>
+    </footer>
 </body>
 </html>

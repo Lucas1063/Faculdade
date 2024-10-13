@@ -57,3 +57,29 @@ body {
 .btn-ler:hover {
     background-color: #218838;
 }
+body {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos na coluna */
+    min-height: 100vh; /* Faz o corpo ocupar pelo menos a altura total da viewport */
+    margin: 0; /* Remove margens padrão */
+}
+
+.container {
+    flex: 1; /* Faz a área do conteúdo crescer para preencher o espaço */
+    display: flex;
+    flex-direction: column; /* Alinha perguntas e botões em coluna */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+footer {
+    background-color: #f8f9fa; /* Cor de fundo leve */
+    padding: 10px;
+    text-align: center;
+    width: 100%; /* Largura total */
+}
+
+.anonimato {
+    color: #555; /* Cor do texto do rodapé */
+    font-size: 14px;
+}
