@@ -8,7 +8,7 @@
 /* Cor de fundo e estilo geral */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e8f5e9; /* Fundo verde suave */
+    background-color: #e8f5e9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ form {
 h1 {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #2e7d32; /* Verde escuro */
+    color: #2e7d32;
     text-align: center;
 }
 
@@ -66,7 +66,7 @@ textarea {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50; /* Verde primário */
+    background-color: #4CAF50;
     color: white;
     font-size: 1em;
     font-weight: bold;
@@ -78,7 +78,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+    background-color: #45a049;
 }
 
 /* Responsividade para tablets */
@@ -99,21 +99,21 @@ button:hover {
 
 /* Estilo das perguntas */
 .pergunta label {
-    font-size: 1.2em; /* Aumenta o tamanho do texto das perguntas */
+    font-size: 1.2em;
     color: #333;
 }
 
 /* Botões de avaliação */
 .botoes-resposta {
     display: flex;
-    gap: 8px; /* Aumenta o espaço entre os botões */
+    gap: 8px;
     margin-top: 10px;
 }
 
 .botao-nota {
-    width: 50px; /* Aumenta a largura do botão */
-    height: 50px; /* Aumenta a altura do botão */
-    font-size: 1.2em; /* Aumenta o tamanho do texto nos botões */
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -185,8 +185,9 @@ button:hover {
 .message h1 {
     font-size: 1.5em;
     margin-bottom: 15px;
-    color: #4cae4c; 
+    color: #4cae4c;
 }
+
 .message p {
     font-size: 1em;
     color: #333;
@@ -203,3 +204,5 @@ footer {
     text-align: center;
     width: 100%;
 }
+
+
