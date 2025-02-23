@@ -1,7 +1,7 @@
 <?php
 // Configurações do banco de dados
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'teste_hospital2');
+define('DB_NAME', 'perguntas_hospital');
 define('DB_USER', 'postgres');
 define('DB_PASS', '123456789');
 
