@@ -93,7 +93,7 @@
 
     <div class="container">
         <h2>Formulário de Contato</h2>
-        <form action="destino.php" method="POST">
+        <form action="destino.php" method="GET">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -108,11 +108,6 @@
 
             <button type="submit">Enviar</button>
         </form>
-
-        <div class="link-container">
-            <p>Ou envie os dados via GET:</p>
-            <a href="destino.php?nome=Teste&telefone=123456789&email=teste@email.com&mensagem=Exemplo+de+mensagem">Clique aqui</a>
-        </div>
     </div>
 
 </body>
