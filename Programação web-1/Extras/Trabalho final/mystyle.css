@@ -1,0 +1,147 @@
+:root {
+    --cor-destaque: #3498db;
+    --cor-fundo: #ecf0f1;
+    --cor-texto: #000000;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    left: 5px;
+
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: var(--cor-fundo);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 2px solid;
+    border-radius: 10px;
+    width:150px;
+
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown button {
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid;
+    border-radius: 40px 40px;
+
+}
+
+.dropdown-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+
+.div-fundida {
+    background: rgba(0, 183, 255, 0.255);
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    height: 100vh;
+}
+
+.div-botao {
+    background-color: #00a2ff;
+    margin-top: 10px;
+    justify-content: center;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    position: relative;
+    border: 2px solid;
+    border-radius: 40px 40px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(19, 133, 226, 0.438);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid;
+}
+
+.titulo {
+    color: var(--cor-texto);
+    font-weight: bold;
+    margin: 0;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.capa {
+    background-image: url('IMG/ong.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 40px 40px;
+}
+
+
+.botao-inicio {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    z-index: 2;
+    border: 2px solid;
+    border-radius: 40px 40px;
+}
+
+
+.body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(240, 17, 17);
+}
+
+
+.fonte {
+    margin-left: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large
+}
+
+.img-ong { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.social-icons{
+    font-size: 30px; 
+    color: #2f00ff;
+}

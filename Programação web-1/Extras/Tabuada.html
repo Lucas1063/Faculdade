@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #calculator {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            width: 310px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(135, 206, 235, 0.7);
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 7%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+   
+        .resultado {
+            border: 1px solid #ccc;
+            color: rgb(255, 0, 0);
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script language="JavaScript">
+        function tabuada() {
+            let num = parseInt(document.getElementById('inum').value);
+            let numeroAte = parseInt(document.getElementById('numeroAte').value);
+            let mostrarTodas = document.getElementById('mostrarTodas').checked;
+            let resultado = "";
+
+            if (mostrarTodas) {
+                for (let i = 1; i <= numeroAte; i++) {
+                    for (let j = 1; j <= 10; j++) {
+                        resultado += "<div class='resultado'>" + i + " x " + j + " = " + (i * j) + "</div>";
+                    }
+                }
+            } else {
+                for (let i = 1; i <= 10; i++) {
+                    resultado += "<div class='resultado'>" + num + " x " + i + " = " + (num * i) + "</div>";
+                }
+            }
+
+            document.getElementById('dresultado').innerHTML = resultado;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+    <label for="inum">Número: </label>
+    <input type="number" id="inum" value="2" step="1">
+    <br>
+    <label for="numeroAte">Tabuada até o número: </label>
+    <input type="number" id="numeroAte" value="10" step="1">
+    <br>
+    <label for="mostrarTodas">Mostrar todas as tabuadas? </label>
+    <input type="checkbox" id="mostrarTodas">
+    <br>
+    <button onclick="tabuada()">
+        Exibir
+    </button>
+    <br>
+    <div id="dresultado"></div>
+</body>
+
+</html>

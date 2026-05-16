@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="form-container">
+        <form action="cadastro.php" method="post">
+            <div id="personal-info">
+                <fieldset>
+                    <legend>Informações Pessoais</legend>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div>
+                        <label for="sobrenome">Sobrenome:</label>
+                        <input type="text" id="sobrenome" name="sobrenome" required>
+                    </div>
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div id="birth-info">
+                <fieldset>
+                    <legend>Dados Adicionais</legend>
+                    <div>
+                        <label for="data-nascimento">Data de Nascimento:</label>
+                        <input type="date" id="data-nascimento" name="data-nascimento" required>
+                    </div>
+                    <div>
+                        <label>Sexo:</label>
+                        <input type="radio" id="masculino" name="sexo" value="masculino" required>
+                        <label for="masculino">Masculino</label>
+                        <input type="radio" id="feminino" name="sexo" value="feminino" required>
+                        <label for="feminino">Feminino</label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div id="address-info">
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <div>
+                        <label for="endereco">Endereço:</label>
+                        <textarea id="endereco" name="endereco" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" required>
+                    </div>
+                    <div>
+                        <label for="estado">Estado (UF):</label>
+                        <select id="estado" name="estado" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div id="form-buttons">
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

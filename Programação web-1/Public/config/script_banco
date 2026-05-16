@@ -1,0 +1,77 @@
+
+BEGIN;
+
+
+CREATE TABLE IF NOT EXISTS public.avaliacoes
+(
+    id_avaliacao serial NOT NULL,
+    id_setor integer,
+    id_pergunta integer,
+    id_dispositivo integer,
+    resposta integer,
+    feedback_texto text COLLATE pg_catalog."default",
+    data_hora timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT avaliacoes_pkey PRIMARY KEY (id_avaliacao)
+);
+
+CREATE TABLE IF NOT EXISTS public.dispositivos
+(
+    id_dispositivo serial NOT NULL,
+    nome_dispositivo character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    status boolean DEFAULT true,
+    CONSTRAINT dispositivos_pkey PRIMARY KEY (id_dispositivo)
+);
+
+CREATE TABLE IF NOT EXISTS public.perguntas
+(
+    id_pergunta serial NOT NULL,
+    texto_pergunta text COLLATE pg_catalog."default" NOT NULL,
+    status boolean DEFAULT true,
+    id_setor integer,
+    CONSTRAINT perguntas_pkey PRIMARY KEY (id_pergunta)
+);
+
+CREATE TABLE IF NOT EXISTS public.setores
+(
+    id_setor serial NOT NULL,
+    nome_setor character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT setores_pkey PRIMARY KEY (id_setor)
+);
+
+CREATE TABLE IF NOT EXISTS public.usuarios_admin
+(
+    id_usuario serial NOT NULL,
+    login character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    senha_hash character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT usuarios_admin_pkey PRIMARY KEY (id_usuario),
+    CONSTRAINT usuarios_admin_login_key UNIQUE (login)
+);
+
+ALTER TABLE IF EXISTS public.avaliacoes
+    ADD CONSTRAINT avaliacoes_id_dispositivo_fkey FOREIGN KEY (id_dispositivo)
+    REFERENCES public.dispositivos (id_dispositivo) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.avaliacoes
+    ADD CONSTRAINT avaliacoes_id_pergunta_fkey FOREIGN KEY (id_pergunta)
+    REFERENCES public.perguntas (id_pergunta) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.avaliacoes
+    ADD CONSTRAINT avaliacoes_id_setor_fkey FOREIGN KEY (id_setor)
+    REFERENCES public.setores (id_setor) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION;
+
+
+ALTER TABLE IF EXISTS public.perguntas
+    ADD CONSTRAINT perguntas_id_setor_fkey FOREIGN KEY (id_setor)
+    REFERENCES public.setores (id_setor) MATCH SIMPLE
+    ON UPDATE CASCADE
+    ON DELETE SET NULL;
+
+END;

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Viagem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    
+   .calculator {
+      width: 310px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: rgba(135, 206, 235, 0.7);
+    }
+
+    .calculator input {
+      width: 92%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .calculator button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #0056b3;
+    }
+    .calculator h2 {
+      text-align: center;
+    }
+ 
+ 
+ </style>
+</head>
+<body>
+
+<div class="calculator">
+  <h2>Calculadora de Viagem</h2>
+  <label for="nomeViagem">Nome da Viagem:</label>
+  <input type="text" id="nomeViagem" placeholder="Digite o nome da viagem">
+
+  <label for="kmPercorridos">Quilômetros percorridos:</label>
+  <input type="number" id="kmPercorridos" placeholder="Quilômetros">
+
+  <label for="litrosGastos">Litros de combustível gastos:</label>
+  <input type="number" id="litrosGastos" placeholder="Litros de combustível">
+
+  <label for="valorLitro">Valor do litro de combustível (R$):</label>
+  <input type="number" id="valorLitro" placeholder="Valor do litro">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <div id="resultado" style="display: none;">
+    <h3>Resultado:</h3>
+    <p id="autonomia"></p>
+    <p id="valorViagem"></p>
+    <p id="valorPorKm"></p>
+  </div>
+</div>
+
+<script>
+  function calcular() {
+    const nomeViagem = document.getElementById("nomeViagem").value;
+    const kmPercorridos = parseFloat(document.getElementById("kmPercorridos").value);
+    const litrosGastos = parseFloat(document.getElementById("litrosGastos").value);
+    const valorLitro = parseFloat(document.getElementById("valorLitro").value);
+
+    const autonomia = kmPercorridos / litrosGastos;
+    const valorViagem = litrosGastos * valorLitro;
+    const valorPorKm = valorViagem / kmPercorridos;
+
+    document.getElementById("autonomia").innerText = `Autonomia (km/litro): ${autonomia.toFixed(2)}`;
+    document.getElementById("valorViagem").innerText = `Valor da viagem: R$ ${valorViagem.toFixed(2)}`;
+    document.getElementById("valorPorKm").innerText = `Valor por quilômetro: R$ ${valorPorKm.toFixed(2)}`;
+
+    document.getElementById("resultado").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
